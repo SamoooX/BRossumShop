@@ -1,0 +1,6 @@
+1. index
+2. carrito de compras
+3. acerca de nosotros
+4. productos
+5. inicio de sesion
+6. perfil
