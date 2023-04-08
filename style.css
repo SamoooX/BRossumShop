@@ -1,0 +1,15 @@
+body {
+    background-color: grey;
+}
+
+.no-padding {
+    padding: 0 !important;
+}
+.no-margin {
+    margin: 0 !important;
+    margin-right: 0 !important;
+    
+}
+.items {
+    height: 12rem;
+}
