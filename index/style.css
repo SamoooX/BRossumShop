@@ -5,11 +5,36 @@ body {
 .no-padding {
     padding: 0 !important;
 }
+
 .no-margin {
     margin: 0 !important;
     margin-right: 0 !important;
-    
+
 }
+
 .items {
     height: 12rem;
+}
+
+body {
+    min-width: 349px;
+}
+
+.carousel-item img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+}
+
+.btn svg {
+    margin-right: 5px;
+}
+
+.btn p {
+    margin: 0;
 }
