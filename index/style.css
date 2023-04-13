@@ -38,3 +38,17 @@ body {
 .btn p {
     margin: 0;
 }
+
+.card img {
+    max-width: 100px;
+}
+
+.card {
+    max-width: 12rem;
+    max-height: 20rem;
+}
+
+.anuncio {
+    width: 50vw;
+    height: 5vh;
+}
