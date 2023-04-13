@@ -1,7 +1,6 @@
-body {
-    background-color: grey;
+body{
+    background: #262e3a;
 }
-
 .no-padding {
     padding: 0 !important;
 }
@@ -49,6 +48,11 @@ body {
 }
 
 .anuncio {
-    width: 50vw;
-    height: 5vh;
+    width: 100vw;
+    height: 30vh;
 }
+
+a {
+    text-decoration: none;
+}
+

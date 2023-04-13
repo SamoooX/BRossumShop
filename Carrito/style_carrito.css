@@ -1,0 +1,19 @@
+body{
+    background: #262e3a;
+}
+.btn {
+    display: flex;
+    align-items: center;
+}
+
+.btn svg {
+    margin-right: 5px;
+}
+
+.btn p {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
