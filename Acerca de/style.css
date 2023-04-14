@@ -1,0 +1,17 @@
+body {
+    background-color: #262e3a;
+    color: aliceblue
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+}
+
+.btn svg {
+    margin-right: 5px;
+}
+
+.btn p {
+    margin: 0;
+}
