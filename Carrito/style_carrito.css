@@ -1,6 +1,7 @@
-body{
+body {
     background: #262e3a;
 }
+
 .btn {
     display: flex;
     align-items: center;
@@ -23,4 +24,39 @@ img {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+.scrollable-div {
+    max-height: 76vh;
+    /* Altura máxima del div */
+    overflow-x: hidden;
+    /* Mostrar barra de desplazamiento vertical cuando sea necesario */
+    overflow-y: auto;
+}
+
+@media (max-width: 767px) {
+    .scrollable-div {
+        overflow-y: hidden;
+    }
+}
+
+/* Estilos para la barra de desplazamiento en modo noche */
+::-webkit-scrollbar {
+    width: 8px;
+    background-color: #333333;
+
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #888888;
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555555;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #222222;
+    border-radius: 8px;
 }
