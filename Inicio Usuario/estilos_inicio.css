@@ -43,6 +43,15 @@ body{
     cursor: pointer;
 }
 
+.error{
+    font-size: small;
+    color: red;
+    margin-top: 12px;
+    margin-left: 5px;
+    display: none;
+}
+
+
 /* .registrarse{
     color: white;
     text-decoration-style: none;

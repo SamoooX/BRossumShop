@@ -10,6 +10,8 @@
         integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
     <!-- CSS -->
     <link rel="stylesheet" href="estilos_inicio.css">
+    <!-- script  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <!-- script JavaScript -->
     <script src="js/inicio.js"></script>
 </head>
@@ -26,15 +28,15 @@
                     </div>
                     <!-- input y botones -->
                     <div class="form-group mx-sm-4 pt-5">
-                        <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre" required minlength="1"
-                            maxlength="30">
+                        <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre">
+                            <div id="alerta1" class="error">*Ingrese su nombre</div>
                     </div>
                     <div class="form-group mx-sm-4 pt-3">
-                        <input type="password" class="form-control" id="password" placeholder="Ingrese su contraseña" required
-                            minlength="1" maxlength="16">
+                        <input type="password" class="form-control" id="password" placeholder="Ingrese su contraseña">
+                            <div id="alerta2" class="error">*Ingrese su contraseña</div>
                     </div>
                         <div class="form-group mx-sm-4 pt-3 text-center">
-                            <input type="submit" class="btn btn-block Ingresar" value="INICIAR SESION">
+                            <input type="submit" class="btn btn-block Ingresar" id="Ingresar" value="INICIAR SESION">
                         </div>
                     <div class="form-group mx-sm-3 pt-4 text-center">
                         <span class="">
