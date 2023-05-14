@@ -19,6 +19,10 @@ $(document).ready(function () {
             + "</div>"
             + "</div>");
 
+            // Agregar controlador de eventos click al botón "Añadir al carrito"
+            $(".Agregar").last().click(function () {
+                $('#añadirModal').modal('show'); // Mostrar el modal
+            });
         });
         num++
         if (num % 20 == 1) num = 1
