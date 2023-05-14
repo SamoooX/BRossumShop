@@ -1,7 +1,6 @@
 $(document).ready(function () {
     num = 1
 
-
     for (let i = 1; i <= 18; i++) {
         if (num <= 6) {
             $.get("https://fakestoreapi.com/products/" + num, function (data) {
