@@ -34,3 +34,11 @@ body{
 .btn p {
     margin: 0;
 }
+
+.error{
+    font-size: small;
+    color: red;
+    margin-top: 12px;
+    margin-left: 5px;
+    display: none;
+}
