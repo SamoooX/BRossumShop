@@ -36,18 +36,15 @@ body{
 }
 
 .Cancelar{
-    background: #ec0909;
+    background: #c20e0e;
     padding: 10px;
     font-size: 12px;
     font-weight: 700!important;
     color: white;
-    box-shadow: 0 0 30px rgba(218, 25, 25, 0.836);
+    box-shadow: 0 0 30px rgba(182, 3, 3, 0.836);
     transition: 0.5s ease-in;
 }
 
-/* #Camion{
-    width: 40px;
-} */
 #nav-tab{
     border: 0;
 }
@@ -76,6 +73,3 @@ body{
     padding: 5px;
     display: none;
 }
-/* #Tarjeta{
-    
-} */

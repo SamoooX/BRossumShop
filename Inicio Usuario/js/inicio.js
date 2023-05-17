@@ -1,7 +1,8 @@
 $(document).ready(function(){
     $("#Ingresar").click(function(){
 
-        
+        var expPass = /^.{4,12}$/;
+
         var nombre = $("#nombre").val();
         var pass = $("#password").val();
 
@@ -9,7 +10,7 @@ $(document).ready(function(){
             $("#alerta1").fadeIn();
             return false;
         }else{
-            if(pass == ""){
+            if(pass == "" || !expPass.test(pass)){
                 $("#alerta2").fadeIn();
                  return false;
             }
@@ -17,4 +18,3 @@ $(document).ready(function(){
         
     })
 });
-
