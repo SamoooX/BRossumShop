@@ -30,3 +30,14 @@ div.card {
     box-shadow: 0 0 30px rgba(23, 85, 114, 0.836);
     transition: 0.5s ease-in;
 }
+
+#carrito.pendiente:after {
+    content: "";
+    position: absolute;
+    top: 25px;
+    right: 112px;
+    height: 7px;
+    width: 7px;
+    background-color: red;
+    border-radius: 50%;
+}
