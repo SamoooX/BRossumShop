@@ -11,6 +11,10 @@
     integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
   <!-- CSS -->
   <link rel="stylesheet" href="estilos_perfil.css">
+  <!-- scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <!-- script JavaScript -->
+  <script src="js/index.js"></script>
 </head>
 
 <body>
@@ -41,6 +45,8 @@
                   </ul>
               </div>
           </div>
+
+        
           <form class="col-6 me-md-5" role="search">
               <input type="search" class="form-control form-control-dark" placeholder="Buscar..." aria-label="Buscar">
           </form>
@@ -53,6 +59,7 @@
                       </path>
                   </svg>
                   <p class=" d-none d-sm-block">Carrito</p>
+                  <div class="balon "></div>
               </button>
           </a>
           <a href="../Inicio Usuario/Inicio_Sesion.html">
@@ -64,11 +71,13 @@
                           d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1v-1c0-1-1-4-6-4s-6 3-6 4v1a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12z" />
                   </svg>
                   <p class=" d-none d-sm-block">Perfil</p>
+                  
               </button>
           </a>
       </div>
   </nav>
   </header>
+
   <!-- cuerpo  -->
   <main class="container">
     <div class="row mb-3">
@@ -111,20 +120,25 @@
           </div>
         </div>
         <!-- div para los pedidos -->
-        <div class="tab-pane fade" id="nav-orders" role="tabpanel" aria-labelledby="nav-orders-tab">
-          <div class="card">
-            <div class="card-body">
-              <h2 class="text-center">Iphone 15 Pro Max</h2>
-              <div class="row mb-3 pt-3">
-                <div class="col-4">
-                  <img src="img/Opera Captura de pantalla_2023-04-13_010819_www.google.com.png" alt="" id="iphone">
-                </div>
-                <div class="col-4">
-                  <p class="text-light">Pedido en camino...</p>
-                </div>
-                <div class="col-4">
-                  <input type="submit" class="btn btn-block Cancelar" value="CANCELAR PEDIDO">
-                </div>
+        <div class="tab-pane fade Lista" id="nav-orders" role="tabpanel" aria-labelledby="nav-orders-tab">
+         
+
+        </div>
+
+        <!-- modal para confirmar cancelacion -->
+        <div class="modal" tabindex="-1" id="modalCancelar">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Cancelar pedido</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <p>¿Esta seguro que desea cancelar su pedido?</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-danger CancelarPed"data-bs-dismiss="modal" id="botonCancelar">Cancelar Pedido</button>
               </div>
             </div>
           </div>
@@ -157,7 +171,7 @@
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                          <button type="button" class="btn btn-primary">Confirmar</button>
+                          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Confirmar</button>
                         </div>
                       </div>
                     </div>
@@ -170,7 +184,6 @@
       </div>
     </div>
     </div>
-
 
     </div>
     </div>

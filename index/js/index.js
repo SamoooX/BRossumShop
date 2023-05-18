@@ -6,7 +6,7 @@ $(document).ready(function () {
             $.get("https://fakestoreapi.com/products/" + num, function (data) {
                 indice = extraer(data.title)
                 $(".cc1").append(
-                    "<div class='card me-3 mb-3' style='width: 33vw;'>"
+                    "<div class='card me-3 mb-3 d-flex align-items-center justify-content-center'>"
                     + "<img src='" + data.image + "' class='card-img-top' alt='...'>"
                     + "<div class='card-body no-padding'>"
                     + "<p class='card-text'>" + (data.title).substr(0, indice) + "</p>"
@@ -19,7 +19,7 @@ $(document).ready(function () {
             $.get("https://fakestoreapi.com/products/" + num, function (data) {
                 indice = extraer(data.title)
                 $(".cc2").append(
-                    "<div class='card me-3 mb-3' style='width: 33vw;'>"
+                    "<div class='card me-3 mb-3'>"
                     + "<img src='" + data.image + "' class='card-img-top' alt='...'>"
                     + "<div class='card-body no-padding'>"
                     + "<p class='card-text'>" + (data.title).substr(0, indice) + "</p>"
@@ -31,7 +31,7 @@ $(document).ready(function () {
             $.get("https://fakestoreapi.com/products/" + num, function (data) {
                 indice = extraer(data.title)
                 $(".cc3").append(
-                    "<div class='card me-3 mb-3' style='width: 33vw;'>"
+                    "<div class='card me-3 mb-3'>"
                     + "<img src='" + data.image + "' class='card-img-top' alt='...'>"
                     + "<div class='card-body no-padding'>"
                     + "<p class='card-text'>" + (data.title).substr(0, indice) + "</p>"
@@ -46,19 +46,6 @@ $(document).ready(function () {
 
 
     }
-
-    // antiado un nuevo click por cada boton borrar
-    /*    $(document).on('click', '.borrar', function (event) {
-           precio = $(this).closest('.row').find('.precio').text();
-           total = (parseFloat(total) - parseFloat(precio)).toFixed(2);
-           $("#total").text(
-               '$' + total
-           );
-           event.preventDefault();
-           $(this).closest('div.row').remove();
- 
-       }); */
-
 
 });
 

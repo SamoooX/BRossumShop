@@ -11,6 +11,10 @@
     integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
   <!-- CSS  -->
   <link rel="stylesheet" href="estilos_registro.css">
+  <!-- scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <!-- script JavaScript -->
+  <script src="js/registro.js"></script>
 </head>
 
 <body>
@@ -78,37 +82,29 @@
             <h1 class="">REGISTRO</h1>
           </div>
           <div class="col-md-6 form-group pt-3">
-            <input type="text" class="form-control" id="nombre" placeholder="Nombre" 
-            required
-            minlength="1"
-            maxlength="30">
+            <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+            <div id="alerta1" class="error">*Ingrese su nombre</div>
           </div>
           <div class="col-md-6 form-group pt-3">
-            <input type="text" class="form-control" id="Apellido" placeholder="Apellido"
-            required
-            minlength="1"
-            maxlength="30">
+            <input type="text" class="form-control" id="apellido" placeholder="Apellido">
+            <div id="alerta2" class="error">*Ingrese su apellido</div>
           </div>
           <div class="col-md-12 form-group pt-3">
-            <input type="email" class="form-control" id="Correo" placeholder="Correo"
-            required
-            minlength="1"
-            maxlength="100">
+            <input type="email" class="form-control" id="correo" placeholder="Correo">
+            <div id="alerta3" class="error">*Ingrese su correo</div>
           </div>
           <div class="col-md-6 form-group pt-3">
-            <input type="password" class="form-control" id="Contraseña" placeholder="Contraseña"
-            required
-            minlength="1"
-            maxlength="16">
+            <input type="password" class="form-control" id="contraseña" placeholder="Contraseña">
+            <div id="alerta4" class="error">*Ingrese su contraseña</div>
           </div>
           <div class="col-md-6 form-group pt-3">
-            <input type="password" class="form-control" id="Contraseña" placeholder="Confirme su contraseña"
-            required
-            minlength="1"
-            maxlength="16">
+            <input type="password" class="form-control" id="confcontraseña" placeholder="Confirme su contraseña">
+            <div id="alerta5" class="error">*Ingrese su contraseña</div>
+            <div id="alerta6" class="error">*La contraseña tiene que ser de 4 a 12 digitos</div>
+            <div id="alerta7" class="error">*La contraseña no coincide</div>
           </div>
           <div class="col-12 pt-3 text-center">
-            <input type="submit" class="btn btn-block Ingresar" value="Crear cuenta">
+            <input type="submit" class="btn btn-block Ingresar" id="Ingresar" value="Crear cuenta">
           </div>
 
           <div class="text-center">
