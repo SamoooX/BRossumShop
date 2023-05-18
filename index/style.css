@@ -44,6 +44,8 @@ body {
 
 .card img {
     max-width: 100px;
+    width: 22vw;
+    height: 18vh;
 }
 
 .card {
@@ -68,6 +70,9 @@ a {
     border-radius: 0.5rem;
 
     cursor: pointer;
+
+    width: 33vw;
+    height: 25vh;
 }
 
 
