@@ -1,5 +1,5 @@
 from django import forms
+from django.contrib.auth.forms import UserCreationForm
 
-class FormularioUsuario(forms.ModelForm):
-    class Meta:
-        # model = Usuario
+class FormularioUsuario(UserCreationForm):
+    pass 
