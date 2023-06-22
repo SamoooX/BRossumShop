@@ -1,0 +1,81 @@
+{% extends 'tienda/base.html' %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'tienda/'%}css/style_index.css" />
+{% endblock %}
+
+
+{% block contenido %}
+<h1>Soy contenido</h1>
+<!-- Anuncios -->
+<div class="text-center mt-5">
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{% static 'tienda/'%}img/11.jpg" class="d-block w-100 mx-auto" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'tienda/'%}img/22.jpg" class="d-block w-100 mx-auto" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'tienda/'%}img/33.jpg" class="d-block w-100 mx-auto" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+
+
+<!-- Carousel items -->
+<br>
+<div id="carouselExampleWhite" class="carousel carousel-white slide">
+    <div class="carousel-inner">
+        <div class="carousel-item active py-5" data-bs-interval="2000">
+
+            <div class="row row-cols-auto text-center justify-content-center cc1">
+
+            </div>
+        </div>
+
+        <div class="carousel-item py-5" data-bs-interval="2000">
+            <div class="row row-cols-auto text-center justify-content-center cc2">
+
+
+            </div>
+        </div>
+
+        <div class="carousel-item py-5">
+
+            <div class="row row-cols-auto text-center justify-content-center cc3">
+
+            </div>
+        </div>
+
+    </div>
+    <button class="carousel-control-prev pe-5" type="button" data-bs-target="#carouselExampleWhite"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next ps-5" type="button" data-bs-target="#carouselExampleWhite"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+{% endblock %}
+{% block javascript %}
+<script src="{% static 'tienda/'%}js/index.js"></script>
+{% endblock %}

@@ -1,0 +1,75 @@
+body{
+    background: #262e3a;
+}
+
+
+.card-img-top{
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+}
+.card{
+    background: #262e3a;
+    color: white;
+}
+
+.img-fluid{
+    border-radius: 100px;
+}
+
+.btn.Carrito {
+    display: flex;
+    align-items: center;
+}
+
+.btn svg {
+    margin-right: 5px;
+}
+
+.btn p {
+    margin: 0;
+}
+
+#iphone{
+    width: 75px;
+    border-radius: 10px;
+}
+
+.Cancelar{
+    background: #c20e0e;
+    padding: 10px;
+    font-size: 12px;
+    font-weight: 700!important;
+    color: white;
+    box-shadow: 0 0 30px rgba(182, 3, 3, 0.836);
+    transition: 0.5s ease-in;
+}
+
+#nav-tab{
+    border: 0;
+}
+
+.Calificar{
+    background: #1abd35;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 700!important;
+    color: white;
+    box-shadow: 0 0 30px rgba(30, 169, 67, 0.836);
+    transition: 0.5s ease-in;
+}
+ main{
+    height: 80vh;
+ }
+
+.balon{
+    background: red;
+    width: 12px;
+    height: 12px;
+    border-radius: 100px;
+    position: absolute;
+    bottom: 5px;
+    right: 107px;
+    padding: 5px;
+    display: none;
+}

@@ -1,0 +1,44 @@
+body{
+    background: #262e3a;
+}
+.formulario{
+    background:rgba(0, -0, -0, .1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0, -0, -0, 0.568);
+    color: white;
+}
+
+.Ingresar{
+    background: #048ce7;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 700!important;
+    color: white;
+    box-shadow: 0 0 30px rgba(23, 85, 114, 0.836);
+    transition: 0.5s ease-in;
+}
+.Ingresar:hover{
+    color: white;
+}
+
+.btn.Carrito {
+    display: flex;
+    align-items: center;
+}
+
+.btn svg {
+    margin-right: 5px;
+}
+
+.btn p {
+    margin: 0;
+}
+
+.error{
+    font-size: small;
+    color: red;
+    margin-top: 12px;
+    margin-left: 5px;
+    display: none;
+}
