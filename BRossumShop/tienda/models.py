@@ -1,3 +1,45 @@
 from django.db import models
+from django.db.models.deletion import CASCADE
+
+class Usuario(models.Model):
+    nombre = models.CharField(max_length=100, null=False, verbose_name='Nombre')
+    apellido = models.CharField(max_length=100, null=False, verbose_name='Apellido')
+    correo = models.CharField(max_length=200, null=False, verbose_name='Correo')
+    contraseña = models.CharField(max_length=12, null=False, verbose_name='Contraseña')
+    contraseña2 = models.CharField(max_length=12, null=False, verbose_name='Contraseña 2')
+
+    def __str__(self):
+        return self.nombre
+
+
+class Producto(models.Model):
+    nombre = models.CharField(max_length=200, null=False, verbose_name='Nombre')
+    imagen = models.CharField(max_length=500, null=False, verbose_name='Imagen')
+    stock = models.IntegerField(null=False, verbose_name='Stock')
+
+    def __str__(self):
+        return self.nombre
+
+
+class DetalleBoleta(models.Model):
+    id_boleta = models.ForeignKey('Boleta', on_delete=models.CASCADE, null=False)
+    id_producto = models.ForeignKey('Producto', on_delete=models.CASCADE, null=False)
+    valor_unitario = models.DecimalField(max_digits=10, decimal_places=2, null=False)
+    cantidad = models.PositiveIntegerField(null=False)
+    total = models.DecimalField(max_digits=10, decimal_places=2, null=False)
+
+    def __str__(self):
+        return f'Detalle Boleta {self.id}'
+
+
+class Boleta(models.Model):
+    id_boleta = models.AutoField(primary_key=True)
+    id_usuario = models.ForeignKey('Usuario', on_delete=models.CASCADE, null=False)
+    monto = models.IntegerField(null=False)
+    fecha = models.DateField(null=False)
+
+    def __str__(self):
+        return f'Boleta {self.id_boleta}'
+
 
 # Create your models here.
