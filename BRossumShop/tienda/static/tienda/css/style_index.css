@@ -1,5 +1,6 @@
 body {
     background: #262e3a !important;
+    min-width: 349px;
 }
 
 .no-padding {
@@ -14,10 +15,6 @@ body {
 
 .items {
     height: 12rem;
-}
-
-body {
-    min-width: 349px;
 }
 
 .carousel-item img {
