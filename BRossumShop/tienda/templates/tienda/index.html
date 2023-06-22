@@ -3,9 +3,8 @@
 {% load static %}
 
 {% block css %}
-<link rel="stylesheet" href="{% static 'tienda/css/style_index.css' %}" />
-
-{% endblock %}
+<link rel="stylesheet" href="{% static 'tienda/'%}css/style_index.css"/>
+{% endblock css %}
 
 
 {% block contenido %}
@@ -45,7 +44,7 @@
         <div class="carousel-item active py-5" data-bs-interval="2000">
 
             <div class="row row-cols-auto text-center justify-content-center cc1">
-
+                
             </div>
         </div>
 
@@ -76,7 +75,7 @@
     </button>
 </div>
 
-{% endblock %}
+{% endblock contenido %}
 {% block javascript %}
 <script src="{% static 'tienda/'%}js/index.js"></script>
-{% endblock %}
+{% endblock javascript %}
