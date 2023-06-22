@@ -23,6 +23,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('nombre', models.CharField(max_length=200, verbose_name='Nombre')),
+                ('precio', models.IntegerField(verbose_name='Precio')),
                 ('imagen', models.CharField(max_length=500, verbose_name='Imagen')),
                 ('stock', models.IntegerField(verbose_name='Stock')),
             ],
