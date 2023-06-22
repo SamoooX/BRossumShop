@@ -22,9 +22,11 @@ def carrito(request):
 
     return render(request, 'tienda/carrito.html', context)
 
-
 def producto(request):
-    return render(request, 'tienda/producto.html')
+    product = Producto.objects.all()
+    context = {"product":product}
+    return render(request,'tienda/producto.html', context)
+
 
 def acercade(request):
     return render(request, 'tienda/acercade.html')
