@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block css %}
-<link rel="stylesheet" href="{% static 'tienda/'%}css/style_carrito.css"/>
+<link rel="stylesheet" href="{% static 'tienda/'%}css/style_carrito.css" />
 {% endblock css %}
 
 
@@ -15,7 +15,20 @@
             <button id="enviar" class="btn btn-primary">Agregar Producto</button>
             <br>
             <div class="scrollable-div carrito" data-bs-spy="scrollSpy">
-
+                {% for detalle in detalles %}
+                <div class='row mb-2'>
+                    <hr>
+                    <div class='col-md-3'>
+                        <img src='{{ detalle.producto.imagen }}' alt='Product Image' class='img-fluid'>
+                    </div>
+                    <div class='col-md-9'>
+                        <h5>Producto: {{ detalle.producto.nombre }}</h5>
+                        <p>Precio: $<span class='precio'>{{ detalle.producto.precio }}</span></p>
+                        <p>Cantidad: {{ detalle.cantidad }}</p>
+                        <button class='btn btn-sm btn-danger borrar'>Eliminar</button>
+                    </div>
+                </div>
+            {% endfor %}            
             </div>
         </div>
         <div class="col-lg-4">

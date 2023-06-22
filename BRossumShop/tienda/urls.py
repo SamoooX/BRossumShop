@@ -10,4 +10,5 @@ urlpatterns = [
     path('Inicio_Sesion/', views.inicio_sesion, name="Inicio_Sesion"),
     path('perfil/', views.perfil, name="perfil"),
     path('Registro/', views.registro, name="registro"),
+    path('agregar_carrito/<id>/', views.agregar_carrito, name='agregar_carrito'),
 ]
