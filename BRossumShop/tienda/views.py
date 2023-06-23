@@ -56,7 +56,7 @@ def inicio_sesion(request):
 
         if user is not None:
             login(request, user)
-    return render(request, 'tienda/Inicio_Sesion.html')
+    return render(request, 'registration/login.html')
 
 
 def registro(request):
@@ -134,4 +134,4 @@ def finalizar_compra(request):
         return redirect('confirmacion_compra')
     else:
         # El usuario no está autenticado, redirige a la página de inicio de sesión
-        return redirect('registro/')
+        return redirect('login')
