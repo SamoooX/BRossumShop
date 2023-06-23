@@ -7,10 +7,12 @@ urlpatterns = [
     path('carrito/', views.carrito, name="carrito"),
     path('producto/', views.producto, name="producto"),
     path('acercade/', views.acercade, name="acercade"),
-    path('Inicio_Sesion/', views.inicio_sesion, name="Inicio_Sesion"),
+    path('login/', views.inicio_sesion, name="login"),
     path('perfil/', views.perfil, name="perfil"),
     path('Registro/', views.registro, name="registro"),
     path('agregar_carrito/<id>/', views.agregar_carrito, name='agregar_carrito'),
     path('eliminar_dcarrito/<id>/', views.eliminar_dcarrito, name='eliminar_dcarrito'),
     path('finalizar_compra', views.finalizar_compra, name='finalizar_compra'),
+    path('logout/', views.exit, name='exit'),
+    
 ]

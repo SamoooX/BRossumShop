@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 {% load static %}
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,7 +15,7 @@
   <!-- scripts -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <!-- script JavaScript -->
-  <script src="js/registro.js"></script>
+  <script src="{% static 'tienda/'%}js/registro.js"></script>
 </head>
 
 <body>
@@ -34,13 +35,13 @@
               <div class="offcanvas-body">
                   <ul class="navbar-nav justify-content-start flex-grow-1 pe-3">
                       <li class="nav-item px-3">
-                          <a class="nav-link active" aria-current="page" href="../index/index.html">Inicio</a>
+                          <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Inicio</a>
                       </li>
                       <li class="nav-item px-3">
-                          <a class="nav-link" href="../Productos/producto.html">Productos</a>
+                          <a class="nav-link" href="{% url 'producto' %}">Productos</a>
                       </li>
                       <li class="nav-item px-3">
-                          <a class="nav-link" href="../Acerca de/acercade.html">Acerca de nosotros</a>
+                          <a class="nav-link" href="{% url 'acercade' %}">Acerca de nosotros</a>
                       </li>
                   </ul>
               </div>
@@ -48,7 +49,7 @@
           <form class="col-6 me-md-5" role="search">
               <input type="search" class="form-control form-control-dark" placeholder="Buscar..." aria-label="Buscar">
           </form>
-          <a href="../Carrito/carrito.html">
+          <a href="{% url 'carrito' %}">
               <button type="button" class="btn btn-secondary me-md-2 Carrito">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                       class="bi bi-cart4" viewBox="0 0 16 16">
@@ -59,7 +60,7 @@
                   <p class=" d-none d-sm-block">Carrito</p>
               </button>
           </a>
-          <a href="../Inicio Usuario/Inicio_Sesion.html">
+          <a href="{% url 'login' %}">
               <button type="button" class="btn btn-secondary me-md-2 Carrito">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                       class="bi bi-person-square" viewBox="0 0 16 16">
@@ -77,39 +78,18 @@
   <div class="container">
     <div class="row justify-content-center pt-2 mt-5 m-1">
       <div class="col-md-8 col-sm-10 col-xl-5 col-lg-6 formulario">
-        <form class="row g-3" action="../Perfil/perfil.html" method="">
+        <form class="row g-3" action="{% url 'index' %}" method="post">
+          {% csrf_token %}
           <div class="form-group text-center pt-3">
             <h1 class="">REGISTRO</h1>
-          </div>
-          <div class="col-md-6 form-group pt-3">
-            <input type="text" class="form-control" id="nombre" placeholder="Nombre">
-            <div id="alerta1" class="error">*Ingrese su nombre</div>
-          </div>
-          <div class="col-md-6 form-group pt-3">
-            <input type="text" class="form-control" id="apellido" placeholder="Apellido">
-            <div id="alerta2" class="error">*Ingrese su apellido</div>
-          </div>
-          <div class="col-md-12 form-group pt-3">
-            <input type="email" class="form-control" id="correo" placeholder="Correo">
-            <div id="alerta3" class="error">*Ingrese su correo</div>
-          </div>
-          <div class="col-md-6 form-group pt-3">
-            <input type="password" class="form-control" id="contraseña" placeholder="Contraseña">
-            <div id="alerta4" class="error">*Ingrese su contraseña</div>
-          </div>
-          <div class="col-md-6 form-group pt-3">
-            <input type="password" class="form-control" id="confcontraseña" placeholder="Confirme su contraseña">
-            <div id="alerta5" class="error">*Ingrese su contraseña</div>
-            <div id="alerta6" class="error">*La contraseña tiene que ser de 4 a 12 digitos</div>
-            <div id="alerta7" class="error">*La contraseña no coincide</div>
-          </div>
+            {{ form.as_table }}
           <div class="col-12 pt-3 text-center">
             <input type="submit" class="btn btn-block Ingresar" id="Ingresar" value="Crear cuenta">
           </div>
 
           <div class="text-center">
             <p>
-              ¿Ya tienes una cuenta? <a href="../Inicio Usuario/Inicio_Sesion.html">Iniciar Sesion</a>
+              ¿Ya tienes una cuenta? <a href="{% url 'login' %}">Iniciar Sesion</a>
             </p>
           </div>
         </form>

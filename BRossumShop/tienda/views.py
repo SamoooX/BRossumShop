@@ -1,15 +1,17 @@
 from django.shortcuts import render, redirect
 from django.shortcuts import get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import authenticate, login, logout
 from datetime import datetime
 from .models import Carrito, Producto, DetalleCarrito,  Boleta, DetalleBoleta
+from .forms import FormularioUsuario
 # Create your views here.
 
 
 def index(request):
     return render(request, 'tienda/index.html')
 
-
+@login_required
 def carrito(request):
     # Verificar si el usuario está autenticado
     if request.user.is_authenticated:
@@ -38,17 +40,37 @@ def producto(request):
 def acercade(request):
     return render(request, 'tienda/acercade.html')
 
-
+@login_required
 def perfil(request):
     return render(request, 'tienda/perfil.html')
 
 
 def inicio_sesion(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+        
+        if user is not None:
+            login(request, user)
     return render(request, 'tienda/Inicio_Sesion.html')
 
 
 def registro(request):
-    return render(request, 'tienda/Registro.html')
+    data = {
+        'form':FormularioUsuario()
+    }
+
+    if request.method == 'POST':
+        formulario = FormularioUsuario(request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            data['mensaje'] = "Te has registrado correctamente"
+    return render(request, 'registration/Registro.html', data)
+
+def exit(request):
+    logout(request)
+    return redirect('tienda/index.html')
 
 
 def agregar_carrito(request, id):
