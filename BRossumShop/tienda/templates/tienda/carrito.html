@@ -38,10 +38,16 @@
             <hr>
             <div class="d-flex justify-content-between align-items-center">
                 <h4>Total:</h4>
-                <h4 id="total">$0.00</h4>
+                <h4 id="total">${{ total }}</h4>
             </div>
-            <a href="{% url 'finalizar_compra' %}"><button class="btn btn-success btn-block mt-3" data-bs-toggle="modal"
-                    data-bs-target="#exampleModal">Comprar</button></a>
+            <a href="{% url 'finalizar_compra' %}">
+                {% if request.user.is_authenticated %}
+                <button class="btn btn-success btn-block mt-3" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">Comprar</button>
+                {% else  %}
+                <button class="btn btn-success btn-block mt-3">Comprar</button>
+                {% endif %}
+            </a>
             <a href="{% url 'producto' %}"><button class="btn btn-secondary btn-block mt-3">Seguir
                     Comprando</button></a>
         </div>

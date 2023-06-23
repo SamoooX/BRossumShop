@@ -20,10 +20,11 @@ def carrito(request):
 
     # Obtener los detalles del carrito
     detalles = carrito.detallecarrito_set.all()
-
+    total = sum(detalle.producto.precio for detalle in detalles)
     # Pasar los detalles a la plantilla en el diccionario de contexto
     context = {
-        'detalles': detalles
+        'detalles': detalles,
+        'total': total
     }
 
     return render(request, 'tienda/carrito.html', context)
