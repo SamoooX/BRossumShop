@@ -1,4 +1,7 @@
-<<<<<<< HEAD:BRossumShop/tienda/static/css/style_producto.css
+body {
+    background: #262e3a !important;
+}
+
 .btn {
     display: flex;
     align-items: center;
@@ -12,50 +15,12 @@
     margin: 0;
 }
 
-body {
-    background-color: #262e3a;
-}
-
 div.card {
     background-color: beige;
 
 }
 
 .Agregar {
-
-    background: #048ce7;
-    padding: 10px;
-    font-size: 16px;
-    font-weight: 700!important;
-    color: white;
-    box-shadow: 0 0 30px rgba(23, 85, 114, 0.836);
-    transition: 0.5s ease-in;
-}
-=======
-.btn {
-    display: flex;
-    align-items: center;
-}
-
-.btn svg {
-    margin-right: 5px;
-}
-
-.btn p {
-    margin: 0;
-}
-
-body {
-    background-color: #262e3a;
-}
-
-div.card {
-    background-color: beige;
-
-}
-
-.Agregar {
-
     background: #048ce7;
     padding: 10px;
     font-size: 16px;
@@ -75,4 +40,4 @@ div.card {
     background-color: red;
     border-radius: 50%;
 }
->>>>>>> 59155145568630adfc0a430c41b01d26457dee6b:Productos/style.css
+
