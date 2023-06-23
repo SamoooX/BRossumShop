@@ -50,9 +50,9 @@ def perfil(request):
 
 def inicio_sesion(request):
     if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
-        user = authenticate(request, username=username, password=password)
+        nombre = request.POST['nombre']
+        contraseña = request.POST['password']
+        user = authenticate(request, nombre=nombre, contraseña=contraseña)
 
         if user is not None:
             login(request, user)
@@ -68,7 +68,15 @@ def registro(request):
         formulario = FormularioUsuario(request.POST)
         if formulario.is_valid():
             formulario.save()
-            data['mensaje'] = "Te has registrado correctamente"
+            nombre = formulario.cleaned_data['nombre']
+            contraseña = formulario.cleaned_data['contraseña']
+            user = authenticate(nombre=nombre, contraseña=contraseña)
+            login(request,user)
+            return redirect(to='index')
+        
+
+
+    
     return render(request, 'registration/Registro.html', data)
 
 def exit(request):
