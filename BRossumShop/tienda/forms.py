@@ -1,5 +1,7 @@
 from django import forms
-from django.contrib.auth.forms import UserCreationForm
+from .models import Usuario
 
-class FormularioUsuario(UserCreationForm):
-    pass 
+class FormularioUsuario(forms.ModelForm):
+    class Meta:
+        model = Usuario
+        fields = '__all__'
