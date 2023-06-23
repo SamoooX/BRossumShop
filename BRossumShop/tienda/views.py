@@ -12,7 +12,7 @@ def index(request):
     return render(request, 'tienda/index.html')
 
 
-@login_required
+
 def carrito(request):
     # Verificar si el usuario está autenticado
     if request.user.is_authenticated:
