@@ -21,7 +21,7 @@
     <div class="container">
         <div class="row justify-content-center pt-5 mt-5 m-1">
             <div class="col-md-6 col-sm-8 col-xl-5 col-lg-5 formulario">
-                <form action="{% url 'index' %}" method="post">
+                <form action="{% url 'perfil' %}" method="post">
                     <!-- texto -->
                     <div class="form-group text-center pt-3">
                         <h1 class="text-light">INICIAR SESION</h1>
@@ -29,14 +29,9 @@
                     <!-- input y botones -->
 
                     {% csrf_token %}
-                    <div class="form-group mx-sm-4 pt-5">
-                        <input name="username" type="text" class="form-control" id="username" placeholder="Ingrese su nombre">
-                            <div id="alerta1" class="error">*Ingrese su nombre</div>
-                    </div>
-                    <div class="form-group mx-sm-4 pt-3">
-                        <input name="password" type="password" class="form-control" id="password" placeholder="Ingrese su contraseña">
-                            <div id="alerta2" class="error">*Ingrese su contraseña</div>
-                    </div>
+                    <table>
+                        {{ form.as_table }}
+                    </table>
                         <div class="form-group mx-sm-4 pt-3 text-center">
                             <button type="submit" class="btn btn-block Ingresar" id="Ingresar">INICIAR SESION</button>
                         </div>
