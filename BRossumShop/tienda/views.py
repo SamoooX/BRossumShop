@@ -134,4 +134,4 @@ def finalizar_compra(request):
         return redirect('confirmacion_compra')
     else:
         # El usuario no está autenticado, redirige a la página de inicio de sesión
-        return redirect('registro/')
+        return redirect('login')
