@@ -15,3 +15,4 @@ class ProductoAdmin(admin.ModelAdmin):
 
 admin.site.register(Usuario, Usuarios)
 admin.site.register(Producto, ProductoAdmin)
+admin.site.register(DetalleCarrito)

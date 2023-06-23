@@ -8,11 +8,10 @@
 
 
 {% block contenido %}
-<div class="container-fluid text-light p-3">
+<div class="container-fluid text-light p-3 mt-5">
     <div class="row mt-3">
         <div class="col-lg-8 ">
             <h2>Carrito de Compras</h2>
-            <button id="enviar" class="btn btn-primary">Agregar Producto</button>
             <br>
             <div class="scrollable-div carrito" data-bs-spy="scrollSpy">
                 {% for detalle in detalles %}
@@ -25,10 +24,13 @@
                         <h5>Producto: {{ detalle.producto.nombre }}</h5>
                         <p>Precio: $<span class='precio'>{{ detalle.producto.precio }}</span></p>
                         <p>Cantidad: {{ detalle.cantidad }}</p>
-                        <button class='btn btn-sm btn-danger borrar'>Eliminar</button>
+                        <form method="POST" action="{% url 'eliminar_dcarrito' detalle.id %}">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-danger">Eliminar</button>
+                        </form>
                     </div>
                 </div>
-            {% endfor %}            
+                {% endfor %}
             </div>
         </div>
         <div class="col-lg-4">
@@ -38,8 +40,8 @@
                 <h4>Total:</h4>
                 <h4 id="total">$0.00</h4>
             </div>
-            <button class="btn btn-success btn-block mt-3" data-bs-toggle="modal"
-                data-bs-target="#exampleModal">Comprar</button>
+            <a href="{% url 'finalizar_compra' %}"><button class="btn btn-success btn-block mt-3" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">Comprar</button></a>
             <a href="{% url 'producto' %}"><button class="btn btn-secondary btn-block mt-3">Seguir
                     Comprando</button></a>
         </div>

@@ -1,37 +1,35 @@
 {% extends 'tienda/base.html' %}
+
 {% load static %}
+
 {% block css %}
-<link rel="stylesheet" href="{% static 'tienda/'%}css/style_producto.css"/>
+<link rel="stylesheet" href="{% static 'tienda/'%}css/style_producto.css" />
 {% endblock css %}
+
 {% block contenido %}
-  <!-- Contenedor principal -->
-  <div class="container mt-4">
-    <!-- Encabezado -->
-    <h1 class="text-center text-light pt-5">Productos Disponibles</h1>
-    <div class="row mt-4">
-      <!-- Productos -->
-      {% for p in product %}
-      <div class="col-lg-3 col-md-6 mb-4">
-        
-        <div class="card h-100">
-          <img
-            class="card-img-top"
-            src={{p.imagen}}
-            alt=""
-          />
-          <div class="card-body">
-            <h4 class="card-title">{{p.nombre}}</h4>
-            {% comment %} <h5>{{p.precio}}</h5> {% endcomment %}
-            <h5>{{p.stock}}</h5>
-            <p class="card-text">{{p.descripcion}}</p>
-          </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-block Agregar">Añadir al carrito</a>
-          </div>
+<!-- Contenedor principal -->
+<div class="container mt-4">
+  <!-- Encabezado -->
+  <h1 class="text-center text-light pt-5">Productos Disponibles</h1>
+  <div class="row mt-4">
+    <!-- Productos -->
+    {% for p in product %}
+    <div class="col-lg-3 col-md-6 mb-4">
+
+      <div class="card h-100">
+        <img class="card-img-top" src={{p.imagen}} alt="" />
+        <div class="card-body">
+          <h4 class="card-title">{{p.nombre}}</h4>
+          <h5>${{p.precio}}</h5>
+          <p class="card-text">{{p.descripcion}}.</p>
+        </div>
+        <div class="card-footer">
+          <a href="{% url 'agregar_carrito' p.id %}" class="btn btn-block Agregar">Añadir al carrito</a>
         </div>
       </div>
-      {% endfor %}
+    </div>
+    {% endfor %}
+    {% endblock contenido %}
 
-{% endblock contenido %}
-{% block javascript %}
-{% endblock javascript %}
+    {% block javascript %}
+    {% endblock javascript %}
