@@ -56,7 +56,7 @@ def inicio_sesion(request):
 
         if user is not None:
             login(request, user)
-    return render(request, 'tienda/Inicio_Sesion.html')
+    return render(request, 'registration/login.html')
 
 
 def registro(request):
