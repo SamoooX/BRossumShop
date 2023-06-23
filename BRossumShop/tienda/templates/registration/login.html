@@ -13,7 +13,7 @@
     <!-- script  -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <!-- script JavaScript -->
-    <script src="js/inicio.js"></script>
+    <script src="{% static 'tienda/'%}js/inicio.js"></script>
 </head>
 
 <body>
@@ -21,22 +21,19 @@
     <div class="container">
         <div class="row justify-content-center pt-5 mt-5 m-1">
             <div class="col-md-6 col-sm-8 col-xl-5 col-lg-5 formulario">
-                <form action="{% url 'perfil' %}">
+                <form action="{% url 'perfil' %}" method="post">
                     <!-- texto -->
                     <div class="form-group text-center pt-3">
                         <h1 class="text-light">INICIAR SESION</h1>
                     </div>
                     <!-- input y botones -->
-                    <div class="form-group mx-sm-4 pt-5">
-                        <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre">
-                            <div id="alerta1" class="error">*Ingrese su nombre</div>
-                    </div>
-                    <div class="form-group mx-sm-4 pt-3">
-                        <input type="password" class="form-control" id="password" placeholder="Ingrese su contraseña">
-                            <div id="alerta2" class="error">*Ingrese su contraseña</div>
-                    </div>
+
+                    {% csrf_token %}
+                    <table>
+                        {{ form.as_table }}
+                    </table>
                         <div class="form-group mx-sm-4 pt-3 text-center">
-                            <input type="submit" class="btn btn-block Ingresar" id="Ingresar" value="INICIAR SESION">
+                            <button type="submit" class="btn btn-block Ingresar" id="Ingresar">INICIAR SESION</button>
                         </div>
                     <div class="form-group mx-sm-3 pt-4 text-center">
                         <span class="">
