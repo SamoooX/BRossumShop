@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 {% load static %}
-
+{% load crispy_forms_tags %}
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -83,7 +83,7 @@
           <div class="form-group text-center pt-3">
             <h1 class="">REGISTRO</h1>
           </div>
-            {{ form.as_table }}
+            {{ form |crispy }}
           <div class="col-12 pt-3 text-center">
             <button type="submit" class="btn btn-primary">Crear cuenta</button>
           </div>

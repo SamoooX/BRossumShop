@@ -3,12 +3,13 @@ from django.db.models.deletion import CASCADE
 
 # Create your models here.
 
-class Usuario(models.Model):
+class Cliente(models.Model):
     nombre = models.CharField(max_length=100, null=False, verbose_name='Nombre')
     apellido = models.CharField(max_length=100, null= False,verbose_name='Apellido')
     correo = models.EmailField(max_length=200, verbose_name='Correo')
     contraseña = models.CharField(max_length=12, null= False, verbose_name='Contraseña')
     contraseña2 = models.CharField(max_length=12, null= False, verbose_name='Contraseña 2')
+
 
 
     def __str__(self):
@@ -38,7 +39,7 @@ class DetalleBoleta(models.Model):
 
 class Boleta(models.Model):
     id_boleta = models.AutoField(primary_key=True)
-    id_usuario = models.ForeignKey('Usuario', on_delete=models.CASCADE, null=False)
+    id_usuario = models.ForeignKey('Cliente', on_delete=models.CASCADE, null=False)
     monto = models.IntegerField(null=False)
     fecha = models.DateField(null=False)
 
@@ -46,7 +47,7 @@ class Boleta(models.Model):
         return f'Boleta {self.id_boleta}'
 
 class Carrito(models.Model):
-    usuario = models.ForeignKey('Usuario', on_delete=models.CASCADE, null=True, blank=True)
+    usuario = models.ForeignKey('Cliente', on_delete=models.CASCADE, null=True, blank=True)
     productos = models.ManyToManyField('Producto', through='DetalleCarrito')
     fecha_creacion = models.DateTimeField(auto_now_add=True)
     fecha_actualizacion = models.DateTimeField(auto_now=True)

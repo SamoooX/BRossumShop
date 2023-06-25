@@ -30,7 +30,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 LOGIN_REDIRECT_URL = 'perfil'
-LOGOUT_REDIRECT_URL = ''
+LOGOUT_REDIRECT_URL = 'index'
 
 # Application definition
 
@@ -42,8 +42,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'tienda',
+    "crispy_forms",
+    "crispy_bootstrap5"
 ]
 
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 
 MIDDLEWARE = [

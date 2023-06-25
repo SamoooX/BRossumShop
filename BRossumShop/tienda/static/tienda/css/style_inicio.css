@@ -11,10 +11,11 @@ body{
 .form-control{
     background: rgba(56, 55, 55, 0.3);
     border-style: none;
+    color: white;
     transition: 0.5s ease-in;
 }
 .form-control:focus{
-    background: #262e3a;
+    background: hsla(216, 8%, 25%, 0.963);
     color: white;
     outline: none;
     box-shadow: none;

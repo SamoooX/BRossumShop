@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Usuario
+from .models import Cliente
 from .models import Producto
 from .models import DetalleCarrito
 # Register your models here.
@@ -13,6 +13,6 @@ class ProductoAdmin(admin.ModelAdmin):
     search_fields = ['nombre', 'precio', 'descripcion', 'stock']
     list_per_page = 10
 
-admin.site.register(Usuario, Usuarios)
+admin.site.register(Cliente, Usuarios)
 admin.site.register(Producto, ProductoAdmin)
 admin.site.register(DetalleCarrito)

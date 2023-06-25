@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="es">
 {% load static %}
+{% load crispy_forms_tags %}
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -27,16 +28,8 @@
                         <h1 class="text-light">INICIAR SESION</h1>
                     </div>
                     <!-- input y botones -->
-
-                    {% csrf_token %}
-                    <div class="form-group mx-sm-4 pt-5">
-                        <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre" name="nombre">
-                            <div id="alerta1" class="error">*Ingrese su nombre</div>
-                    </div>
-                    <div class="form-group mx-sm-4 pt-3">
-                        <input type="password" class="form-control" id="password" placeholder="Ingrese su contraseña" name="contraseña">
-                            <div id="alerta2" class="error">*Ingrese su contraseña</div>
-                    </div>
+                        {% csrf_token %}
+                        {{ form|crispy }}
                     <div class="col-12 pt-3 text-center">
                         <button type="submit" class="btn btn-primary">Iniciar Sesion</button>
                     </div>
