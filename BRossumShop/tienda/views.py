@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.shortcuts import get_object_or_404
 from django.contrib.auth.decorators import login_required
 from datetime import datetime
-from .models import Carrito, Producto, DetalleCarrito,  Boleta, DetalleBoleta
+from .models import Carrito, Producto, DetalleCarrito,  Boleta, DetalleBoleta, Usuario
 from django.contrib.auth import authenticate, login, logout
 from .forms import FormularioUsuario
 # Create your views here.
@@ -51,11 +51,17 @@ def perfil(request):
 def inicio_sesion(request):
     if request.method == 'POST':
         nombre = request.POST['nombre']
-        contraseña = request.POST['password']
-        user = authenticate(request, nombre=nombre, contraseña=contraseña)
-
-        if user is not None:
-            login(request, user)
+        contraseña = request.POST['contraseña']
+        
+        usuario = Usuario.objects.filter(nombre=nombre).first()
+        
+        if usuario is not None and usuario.contraseña == contraseña:
+            user = authenticate(request, first_name=usuario.nombre, password=contraseña)
+            
+            if user is not None:
+                login(request, user)
+                return redirect('perfil')
+            
     return render(request, 'registration/login.html')
 
 
@@ -68,20 +74,13 @@ def registro(request):
         formulario = FormularioUsuario(request.POST)
         if formulario.is_valid():
             formulario.save()
-            nombre = formulario.cleaned_data['nombre']
-            contraseña = formulario.cleaned_data['contraseña']
-            user = authenticate(nombre=nombre, contraseña=contraseña)
-            login(request,user)
-            return redirect(to='index')
+            return redirect('login')
         
-
-
-    
-    return render(request, 'registration/Registro.html', data)
+    return render(request, 'registration/registro.html', data)
 
 def exit(request):
     logout(request)
-    return redirect('tienda/index.html')
+    return redirect('/')
 
 
 def agregar_carrito(request, id):
