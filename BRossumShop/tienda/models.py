@@ -1,19 +1,7 @@
 from django.db import models
 from django.db.models.deletion import CASCADE
-
+from django.contrib.auth.models import User
 # Create your models here.
-
-class Cliente(models.Model):
-    nombre = models.CharField(max_length=100, null=False, verbose_name='Nombre')
-    apellido = models.CharField(max_length=100, null= False,verbose_name='Apellido')
-    correo = models.EmailField(max_length=200, verbose_name='Correo')
-    contraseña = models.CharField(max_length=12, null= False, verbose_name='Contraseña')
-    contraseña2 = models.CharField(max_length=12, null= False, verbose_name='Contraseña 2')
-
-
-
-    def __str__(self):
-            return self.nombre
 
 class Producto(models.Model):
     nombre = models.CharField(max_length=200, null=False, verbose_name='Nombre')
@@ -39,22 +27,29 @@ class DetalleBoleta(models.Model):
 
 class Boleta(models.Model):
     id_boleta = models.AutoField(primary_key=True)
-    id_usuario = models.ForeignKey('Cliente', on_delete=models.CASCADE, null=False)
+    id_usuario = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
     monto = models.IntegerField(null=False)
     fecha = models.DateField(null=False)
+    
 
     def __str__(self):
         return f'Boleta {self.id_boleta}'
 
 class Carrito(models.Model):
-    usuario = models.ForeignKey('Cliente', on_delete=models.CASCADE, null=True, blank=True)
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
     productos = models.ManyToManyField('Producto', through='DetalleCarrito')
     fecha_creacion = models.DateTimeField(auto_now_add=True)
     fecha_actualizacion = models.DateTimeField(auto_now=True)
+    total = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    
+    def calcular_total(self):
+        detalles = self.detallecarrito_set.all()
+        self.total = sum(detalle.producto.precio for detalle in detalles)
+        self.save()
 
     def __str__(self):
         if self.usuario:
-            return f'Carrito del usuario: {self.usuario.nombre}'
+            return f'Carrito del usuario: {self.usuario.username}'
         else:
             return 'Carrito de invitado'
 

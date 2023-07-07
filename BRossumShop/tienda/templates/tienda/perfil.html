@@ -8,12 +8,14 @@
 
 
 {% block contenido %}
-  <!-- cuerpo  -->
-  <main class="container">
-    <div class="row mb-3">
-      <div class="col-md-6">
-          <div class=" card-dark text-center pt-5" style="width: 18rem;">
-        <img src="img/blank-profile-picture-973460_1280.jpg" class="card-img-top mx-auto d-block" alt="imagen_usuario">
+<!-- cuerpo  -->
+<br>
+<br>
+<main class="container">
+  <div class="row mb-3">
+    <div class="col-md-6">
+      <div class=" card-dark text-center pt-5" style="width: 18rem;">
+        <img src="{% static 'tienda/'%}img/user.jpg" class="card-img-top mx-auto d-block" alt="imagen_usuario">
         <div class="card-body">
           <h5 class="card-title text-light pt-2">Usuario</h5>
           <p class="card-text text-light"></p>
@@ -37,21 +39,55 @@
         <div class="tab-pane fade show active" id="nav-shopping" role="tabpanel" aria-labelledby="nav-shopping-tab">
           <div class="card mb-3" style="max-width: 540px;">
             <div class="row g-0">
-              <div class="col-md-4">
-                <img src="img/istockphoto-1214973707-170667a.jpg" class="img-fluid rounded-start" alt="...">
-              </div>
               <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">No posees compras</h5>
-                  <p class="card-text"><small class="text-light">Última actualización hace un momento</small></p>
-                </div>
+                <div class="card-body scrollable">
+                  {% if boletas %}
+                      {% for boleta, detalles in boletas.items %}
+                        <hr>
+                          <h5 class="card-title">Detalles de la boleta {{ boleta.id_boleta }}:</h5>
+                          {% if detalles %}
+                              <ul>
+                                  <table>
+                                      <thead>
+                                          <tr>
+                                              <th></th>
+                                              <th>Producto</th>
+                                              <th>Valor unitario</th>
+                                              <th>Cantidad</th>
+                                              <th>Total</th>
+                                          </tr>
+                                      </thead>
+                                      <tbody>
+                                          {% for detalle in detalles %}
+                                              <tr>
+                                                  <td><img src="{{ detalle.imagen }}" alt="{{ detalle.nombre }}" width="100"></td>
+                                                  <td>{{ detalle.nombre }}</td>
+                                                  <td>${{ detalle.valor_unitario }}</td>
+                                                  <td>{{ detalle.cantidad }}</td>
+                                                  <td>${{ detalle.total }}</td>
+                                              </tr>
+                                          {% endfor %}
+                                      </tbody>
+                                  </table>
+                              </ul>
+                              <p>Total de la boleta: ${{ boleta.monto }}</p>
+                          {% else %}
+                              <p>No hay detalles disponibles para esta boleta.</p>
+                          {% endif %}
+                      {% endfor %}
+                  {% else %}
+                      <h5 class="card-title">No posees compras</h5>
+                      <p class="card-text"><small class="text-light">Última actualización hace un momento</small></p>
+                  {% endif %}
+              </div>
+              
               </div>
             </div>
           </div>
         </div>
         <!-- div para los pedidos -->
         <div class="tab-pane fade Lista" id="nav-orders" role="tabpanel" aria-labelledby="nav-orders-tab">
-         
+
 
         </div>
 
@@ -68,7 +104,8 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-danger CancelarPed"data-bs-dismiss="modal" id="botonCancelar">Cancelar Pedido</button>
+                <button type="button" class="btn btn-danger CancelarPed" data-bs-dismiss="modal"
+                  id="botonCancelar">Cancelar Pedido</button>
               </div>
             </div>
           </div>
@@ -80,11 +117,12 @@
               <h2 class="text-center">Iphone 15 Pro Max</h2>
               <div class="row pt-3">
                 <div class="col-6">
-                  <img src="img/Opera Captura de pantalla_2023-04-13_010819_www.google.com.png" alt="" id="iphone">
+                  <img src="{% static 'tienda/'%}img/ipo.png " alt="" id="iphone">
                 </div>
                 <div class="col-6">
                   <!-- Button trigger modal -->
-                  <button type="button" class="btn btn-block Calificar" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                  <button type="button" class="btn btn-block Calificar" data-bs-toggle="modal"
+                    data-bs-target="#staticBackdrop">
                     Calificar
                   </button>
                   <!-- Modal -->
@@ -113,14 +151,13 @@
         </div>
       </div>
     </div>
-    </div>
+  </div>
 
-    </div>
-    </div>
-  </main>
-  <!-- scripts -->
-  {% endblock %}
-  {% block javascript %}
-  <script src="{% static 'tienda/'%}js/perfil.js"></script>
-  {% endblock %}
-  
+  </div>
+  </div>
+</main>
+<!-- scripts -->
+{% endblock %}
+{% block javascript %}
+<script src="{% static 'tienda/'%}js/perfil.js"></script>
+{% endblock %}

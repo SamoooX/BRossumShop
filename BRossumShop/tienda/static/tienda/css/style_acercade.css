@@ -1,17 +1,17 @@
 body {
-    background-color: #262e3a;
-    color: aliceblue
+    background-color: #262e3a !important;
+    color: aliceblue !important;
 }
 
 .btn {
-    display: flex;
-    align-items: center;
+    display: flex !important;
+    align-items: center !important;
 }
 
 .btn svg {
-    margin-right: 5px;
+    margin-right: 5px !important;
 }
 
 .btn p {
-    margin: 0;
+    margin: 0 !important;
 }

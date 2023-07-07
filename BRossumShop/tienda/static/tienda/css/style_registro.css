@@ -6,20 +6,22 @@ body{
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 30px rgba(0, -0, -0, 0.568);
-    color: white;
+    color: white !important;
 }
-
+.form-text {
+    color: white !important;
+}
 .Ingresar{
     background: #048ce7;
     padding: 10px;
     font-size: 16px;
     font-weight: 700!important;
-    color: white;
+    color: white !important;
     box-shadow: 0 0 30px rgba(23, 85, 114, 0.836);
     transition: 0.5s ease-in;
 }
 .Ingresar:hover{
-    color: white;
+    color: white !important;
 }
 
 .btn.Carrito {
@@ -37,7 +39,7 @@ body{
 
 .error{
     font-size: small;
-    color: red;
+    color: red !important;
     margin-top: 12px;
     margin-left: 5px;
     display: none;

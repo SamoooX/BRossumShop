@@ -1,6 +1,6 @@
 body {
     background: #262e3a !important;
-    min-width: 349px;
+    min-width: 349px !important;
 }
 
 .no-padding {
@@ -10,68 +10,64 @@ body {
 .no-margin {
     margin: 0 !important;
     margin-right: 0 !important;
-
 }
 
 .items {
-    height: 12rem;
+    height: 12rem !important;
 }
 
 .carousel-item img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
 }
 
 .centrar {
-    margin: 0 auto;
+    margin: 0 auto !important;
 }
 
 .btn {
-    display: flex;
-    align-items: center;
+    display: flex !important;
+    align-items: center !important;
 }
 
 .btn svg {
-    margin-right: 5px;
+    margin-right: 5px !important;
 }
 
 .btn p {
-    margin: 0;
+    margin: 0 !important;
 }
 
 .card img {
-    max-width: 100px;
-    width: 22vw;
-    height: 18vh;
+    max-width: 100px !important;
+    width: 22vw !important;
+    height: 18vh !important;
 }
 
 .card {
-    max-width: 12rem;
-    max-height: 20rem;
-    transition: box-shadow 0.2s ease;
+    max-width: 12rem !important;
+    max-height: 20rem !important;
+    transition: box-shadow 0.2s ease !important;
     background-color: #596B88 !important;
     color: white !important;
-
-    border-radius: 0.5rem;
-
-    cursor: pointer;
-
-    width: 33vw;
-    height: 25vh;
+    border-radius: 0.5rem !important;
+    cursor: pointer !important;
+    width: 33vw !important;
+    height: 25vh !important;
 }
 
 .anuncio {
-    width: 100vw;
-    height: 30vh;
+    width: 100vw !important;
+    height: 30vh !important;
 }
 
 a {
-    text-decoration: none;
+    text-decoration: none !important;
 }
 
 .card:hover {
-    box-shadow: 0 0.1rem 0.4rem rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0.1rem 0.4rem rgba(255, 255, 255, 0.3) !important;
 }
 
 .bg-dark {

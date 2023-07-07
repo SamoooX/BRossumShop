@@ -1,75 +1,94 @@
-body{
-    background: #262e3a;
+body {
+    background: #262e3a !important;
 }
 
-
-.card-img-top{
-    width: 100px;
-    height: 100px;
-    border-radius: 100px;
-}
-.card{
-    background: #262e3a;
-    color: white;
+.card-img-top {
+    width: 100px !important;
+    height: 100px !important;
+    border-radius: 100px !important;
 }
 
-.img-fluid{
-    border-radius: 100px;
+.card {
+    background: #262e3a !important;
+    color: white !important;
+}
+
+.img-fluid {
+    border-radius: 100px !important;
 }
 
 .btn.Carrito {
-    display: flex;
-    align-items: center;
+    display: flex !important;
+    align-items: center !important;
 }
 
 .btn svg {
-    margin-right: 5px;
+    margin-right: 5px !important;
 }
 
 .btn p {
-    margin: 0;
+    margin: 0 !important;
 }
 
-#iphone{
-    width: 75px;
-    border-radius: 10px;
+#iphone {
+    width: 75px !important;
+    border-radius: 10px !important;
 }
 
-.Cancelar{
-    background: #c20e0e;
-    padding: 10px;
-    font-size: 12px;
-    font-weight: 700!important;
-    color: white;
-    box-shadow: 0 0 30px rgba(182, 3, 3, 0.836);
-    transition: 0.5s ease-in;
+.Cancelar {
+    background: #c20e0e !important;
+    padding: 10px !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    color: white !important;
+    box-shadow: 0 0 30px rgba(182, 3, 3, 0.836) !important;
+    transition: 0.5s ease-in !important;
 }
 
-#nav-tab{
-    border: 0;
+#nav-tab {
+    border: 0 !important;
 }
 
-.Calificar{
-    background: #1abd35;
-    padding: 10px;
-    font-size: 16px;
-    font-weight: 700!important;
-    color: white;
-    box-shadow: 0 0 30px rgba(30, 169, 67, 0.836);
-    transition: 0.5s ease-in;
+.Calificar {
+    background: #1abd35 !important;
+    padding: 10px !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    color: white !important;
+    box-shadow: 0 0 30px rgba(30, 169, 67, 0.836) !important;
+    transition: 0.5s ease-in !important;
 }
- main{
-    height: 80vh;
- }
 
-.balon{
-    background: red;
-    width: 12px;
-    height: 12px;
-    border-radius: 100px;
-    position: absolute;
-    bottom: 5px;
-    right: 107px;
-    padding: 5px;
-    display: none;
+main {
+    height: 80vh !important;
+}
+
+.balon {
+    background: red !important;
+    width: 12px !important;
+    height: 12px !important;
+    border-radius: 100px !important;
+    position: absolute !important;
+    bottom: 5px !important;
+    right: 107px !important;
+    padding: 5px !important;
+    display: none !important;
+}
+
+table {
+    border-collapse: collapse !important;
+    width: 100% !important;
+}
+
+th,
+td {
+    padding: 8px !important;
+}
+
+.card-body.scrollable {
+    max-height: 500px;
+    width: 550px;
+    /* Ajusta la altura máxima según tus necesidades */
+    overflow-y: auto;
+    overflow-x: hidden;
 }
