@@ -91,8 +91,7 @@ def perfil(request):
 
     # Pasar los diccionarios de boletas y totales a la plantilla en el diccionario de contexto
     context = {
-        'boletas': boletas_con_detalles,
-        'total_boleta': total_boleta
+        'boletas': boletas_con_detalles
     }
 
     return render(request, 'tienda/perfil.html', context)
